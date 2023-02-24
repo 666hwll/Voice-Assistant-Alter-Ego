@@ -1,6 +1,7 @@
 import os
 import time
 import secrets
+import strings
 #import ctypes
 from random import randint
 import pyttsx3
@@ -14,7 +15,8 @@ from selenium import webdriver
 
 
 num, head_or_tails_value = 0, 0
-query, data, pw, characters = "", "", "", "QWERTZUIOPÜ*'ÄÖLKJHGFDSAMNBVCXY<>#+-:;,._@?ß=)(/&%$§!1234567890/qwertzuiopüäölkjhgfdsayxcvbnm"
+query, data = "", ""
+pw, characters = (''.join(secrets.choice(characters) for _ in range(length))), string.digits + string.ascii_letters + string.punctuation
 engine = pyttsx3.init('sapi5') #speech_recognition
 voices = engine.getProperty('voices') #speech_recognition
 engine.setProperty('voice', voices[1].id) #important for the google speech_recognition
@@ -120,11 +122,9 @@ if __name__=='__main__':    #mainloop
                     time.sleep(5) #trailing whitespace  
 
                 if 'random password' or 'Random Password' in query_final:
-                    length = int(input(("Desired password length: ")))
-                    for _ in range(length):
-                        pw = pw+secrets.choice(characters)
-                        print(pw)
-                        time.sleep(5)
+                    length = int(input(("Desired password length(If it should be secure at least 16, 40 should be fine): ")))
+                    print(pw)
+                    time.sleep(5)
                 if 'cube' or 'Cube' in query_final:
                     roll()
                     time.sleep(5)
