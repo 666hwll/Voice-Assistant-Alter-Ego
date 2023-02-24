@@ -1,9 +1,9 @@
-import os
-import time
-import secrets
-import strings
-#import ctypes
-from random import randint
+import os #for later use
+import time 
+import secrets #for random password
+import strings #for random password
+#import ctypes #for later use
+from random import randint #for cube and head or tails
 import pyttsx3
 import datetime
 import webbrowser
@@ -12,7 +12,7 @@ import wikipedia
 import speech_recognition as sr
 import pyaudio
 from selenium import webdriver
-
+#import json #we will later import json to import individual values like the path of a program or something like that 
 
 num, head_or_tails_value = 0, 0
 query, data = "", ""
@@ -20,13 +20,13 @@ pw, characters = (''.join(secrets.choice(characters) for _ in range(length))), s
 engine = pyttsx3.init('sapi5') #speech_recognition
 voices = engine.getProperty('voices') #speech_recognition
 engine.setProperty('voice', voices[1].id) #important for the google speech_recognition
-CONDITION = True #Condition is important when i made a login
+CONDITION = True #Condition for later use
 query_final = []
 
 def roll():         #digital Cube for Games
     print(str(randint(1,6)))
 
-def head_or_tails(): #Head or tails/number
+def head_or_tails(): #Head or tails/numbers
     head_or_tails_value = randint(1, 2)
     if head_or_tails_value > 1:
         respond("Head")
@@ -36,7 +36,7 @@ def head_or_tails(): #Head or tails/number
         print("Tails")
 
 
-def program_or_website_to_open(): #not done
+def program_or_website_to_open(): #only for websites right now
     if 'google' or 'Google' in query_final:
         webbrowser.open_new_tab("https://www.google.com")
         respond("Google is open")
@@ -106,7 +106,7 @@ if __name__=='__main__':    #mainloop
                     break
              
                 if 'time' or 'Time' in query_final:
-                    strTime=datetime.datetime.now().strftime("%H:%M:%S")
+                    strTime = datetime.datetime.now().strftime("%H:%M:%S")
                     respond(f"the time is {strTime}")     
         
                 if 'search' or 'Search' in query_final:
