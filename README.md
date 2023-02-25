@@ -13,7 +13,7 @@ if work_in_progress == True:
 #it should use ctypes(for better performance)
 #it should write preferences into the json, eg. the search engine the user wants;
 #should run as a system command on unix/linux or have at least support.
-elif main_goals = done:
+elif main_goals == "done":
 #create a gui for all my assistants;
 #continue with my other voice assistants;
 #upload the code on github and make a website for it;
