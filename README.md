@@ -1,7 +1,7 @@
 #Voice-Assistant-Pyaudio-Alpha-0.1:
 
 Simple but experimental Implementation of a digital Assistant;
-The Projekt startet on the 20th February 2023 = True:
+The Projekt startet on the 20th February 2023 == True:
 
 While True:
 
