@@ -1,7 +1,7 @@
 import os #for later use
 import time 
 import secrets #for random password
-import strings #for random password
+import string #for random password
 #import ctypes #for later use
 from random import randint #for cube and head or tails
 import pyttsx3
