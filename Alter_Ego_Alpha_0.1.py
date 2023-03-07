@@ -23,6 +23,9 @@ engine.setProperty('voice', voices[1].id) #important for the google speech_recog
 CONDITION = True #Condition for later use
 query_final = []
 
+#def plattform_detection():
+#try
+
 def roll():         #digital Cube for Games
     print(str(randint(1,6)))
 
