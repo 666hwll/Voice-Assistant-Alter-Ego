@@ -2,7 +2,7 @@ import os #for later use
 import time 
 import secrets #for random password
 import string #for random password
-#import ctypes #for later use
+import ctypes #for later use
 from random import randint #for cube and head or tails
 import pyttsx3
 import datetime
@@ -12,7 +12,7 @@ import wikipedia
 import speech_recognition as sr
 import pyaudio
 from selenium import webdriver
-#import json #we will later import json to import individual values like the path of a program or something like that 
+import json #we will later import json to import individual values like the path of a program or something like that 
 
 num, head_or_tails_value = 0, 0
 query, data = "", ""
