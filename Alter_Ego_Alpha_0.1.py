@@ -22,10 +22,20 @@ voices = engine.getProperty('voices') #speech_recognition
 engine.setProperty('voice', voices[1].id) #important for the google speech_recognition
 CONDITION = True #Condition for later use
 query_final = []
-
-#def plattform_detection():
-#try
-
+machine = Plattform()
+class Plattform():
+    def __init__(self):
+        self.operating_system = "UNIX"
+        self.ram = None
+        self.storage = None
+        
+def plattform_detection():
+    try:
+        os.mkdir("./con")
+        os.rmdir(./con")
+    except:
+        machine.operating_system = "WINDOWS"
+                 
 def roll():         #digital Cube for Games
     print(str(randint(1,6)))
 
@@ -90,6 +100,7 @@ def talk():          #recognition and spliting
 if __name__=='__main__':    #mainloop
     print("mainloop")
     clear = lambda: os.system('cls')
+    plattform_detection()
     while True: 
         query_final = talk().lower()
     
