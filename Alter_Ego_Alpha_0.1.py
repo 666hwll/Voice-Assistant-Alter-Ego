@@ -1,9 +1,9 @@
-import os #for later use
+import os
 import time 
-import secrets #for random password
-import string #for random password
-import ctypes #for later use
-from random import randint #for cube and head or tails
+import secrets
+import string
+import ctypes
+from random import randint
 import pyttsx3
 import datetime
 import webbrowser
@@ -12,15 +12,15 @@ import wikipedia
 import speech_recognition as sr
 import pyaudio
 from selenium import webdriver
-import json #we will later import json to import individual values like the path of a program or something like that 
+import json
 
 num, head_or_tails_value = 0, 0
-query, data = "", ""
+query, data, length = "", "", ""
 pw, characters = (''.join(secrets.choice(characters) for _ in range(length))), string.digits + string.ascii_letters + string.punctuation
-engine = pyttsx3.init('sapi5') #speech_recognition
-voices = engine.getProperty('voices') #speech_recognition
-engine.setProperty('voice', voices[1].id) #important for the google speech_recognition
-CONDITION = True #Condition for later use
+engine = pyttsx3.init('sapi5')
+voices = engine.getProperty('voices')
+engine.setProperty('voice', voices[1].id)
+CONDITION = True
 query_final = []
 machine = Plattform()
 class Plattform():
@@ -32,14 +32,14 @@ class Plattform():
 def plattform_detection():
     try:
         os.mkdir("./con")
-        os.rmdir(./con")
+        os.rmdir("./con")
     except:
         machine.operating_system = "WINDOWS"
                  
-def roll():         #digital Cube for Games
+def roll():
     print(str(randint(1,6)))
 
-def head_or_tails(): #Head or tails/numbers
+def head_or_tails():
     head_or_tails_value = randint(1, 2)
     if head_or_tails_value > 1:
         respond("Head")
@@ -49,7 +49,7 @@ def head_or_tails(): #Head or tails/numbers
         print("Tails")
 
 
-def program_or_website_to_open(): #only for websites right now
+def program_or_website_to_open():
     if 'google' or 'Google' in query_final:
         webbrowser.open_new_tab("https://www.google.com")
         respond("Google is open")
@@ -71,11 +71,11 @@ def program_or_website_to_open(): #only for websites right now
         print("Repeat your command...")
         return(query)
     
-def respond(audio): #respond to your command
+def respond(audio):
     engine.say(audio)
     engine.runAndWait()
 
-def talk():          #recognition and spliting 
+def talk():
     r = sr.Recognizer()
      
     with sr.Microphone() as source:
@@ -97,7 +97,7 @@ def talk():          #recognition and spliting
      
     return query
 
-if __name__=='__main__':    #mainloop
+if __name__=='__main__':
     print("mainloop")
     clear = lambda: os.system('cls')
     plattform_detection()
